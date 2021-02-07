@@ -20,8 +20,11 @@ public class Serials {
     private String name;
     private Integer year;
     private String country;
-    private String duration;
-    private String director;
+    private Integer seasons;
+    private Integer episodes;
+    private String epDuration;
+    private String studio;
     private String genres;
     private String type;
+    private Boolean done;
 }

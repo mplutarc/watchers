@@ -12,30 +12,35 @@
 <div class="main">
 	<h3>we are watchers</h3>
 	<form>
-		<select th:name="genres" id="selectGenres" onchange="OnSelectionChange(this)">
+		<select th:name="genres" id="selectGenres" onchange="OnSerialSelectionChange(this)">
 			<option>Выбрать жанр</option>
 			<option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>
 		</select>
-		<button th:action="@{/choice}">Сбросить фильтры</button>
+		<button th:action="@{/choiceSerial}">Сбросить фильтры</button>
 	</form>
+	<h2>Фильмы</h2>
 	<table class="filmsTable">
 		<tr>
 			<th>Название</th>
 			<th>Год</th>
 			<th>Страна</th>
-			<th>Длительность</th>
-			<th>Режиссёр</th>
+			<th>Сезонов</th>
+			<th>Серий</th>
+			<th>Студия</th>
 			<th>Жанр</th>
 			<th>Тип</th>
+			<th>Просмотрено</th>
 		</tr>
-		<tr th:each="film: ${films}">
-			<td th:text="${film.name}"></td>
-			<td th:text="${film.year}"></td>
-			<td th:text="${film.country}"></td>
-			<td th:text="${film.duration}"></td>
-			<td th:text="${film.director}"></td>
-			<td th:text="${film.genres}"></td>
-			<td th:text="${film.type}"></td>
+		<tr th:each="serial: ${serials}">
+			<td th:text="${serial.name}"></td>
+			<td th:text="${serial.year}"></td>
+			<td th:text="${serial.country}"></td>
+			<td th:text="${serial.seasons}"></td>
+			<td th:text="${serial.episodes}"></td>
+			<td th:text="${serial.studio}"></td>
+			<td th:text="${serial.genres}"></td>
+			<td th:text="${serial.type}"></td>
+			<td th:text="${serial.done}"></td>
 		</tr>
 	</table>
 </div>

@@ -2,7 +2,9 @@ package org.example.watchers.controller;
 
 import lombok.val;
 import org.example.watchers.entity.Films;
+import org.example.watchers.entity.Serials;
 import org.example.watchers.repository.FilmsRepository;
+import org.example.watchers.repository.SerialsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,13 +22,16 @@ public class MainController {
     @Autowired
     private FilmsRepository filmsRepository;
 
+    @Autowired
+    private SerialsRepository serialsRepository;
+
     @GetMapping("/")
     public String mainPage(Model model){
         return "main";
     }
 
-    @RequestMapping("/choice")
-    public String getAllGenres(@RequestParam(required = false, defaultValue = "") String genre, Model model) {
+    @RequestMapping("/choiceFilm")
+    public String getAllFilmGenres(@RequestParam(required = false, defaultValue = "") String genre, Model model) {
         val films = filmsRepository.findAll();
         val genres = films
                 .stream()
@@ -39,7 +44,23 @@ public class MainController {
                 .stream()
                 .filter(it -> it.getGenres().contains(genre))
                 .collect(Collectors.toList()));
-        return "choice";
+        return "choiceFilm";
+    }
+    @RequestMapping("/choiceSerial")
+    public String getAllSerialGenres(@RequestParam(required = false, defaultValue = "") String genre, Model model) {
+        val serials = serialsRepository.findAll();
+        val genres = serials
+                .stream()
+                .map(Serials::getGenres)
+                .filter(Objects::nonNull)
+                .flatMap(it -> Stream.of(it.split("; ")))
+                .collect(Collectors.toSet());
+        model.addAttribute("genres", genres);
+        model.addAttribute("serials", serials
+                .stream()
+                .filter(it -> it.getGenres().contains(genre))
+                .collect(Collectors.toList()));
+        return "choiceSerial";
     }
 
 }

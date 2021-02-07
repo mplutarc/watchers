@@ -11,6 +11,11 @@ body {
 	font-weight: lighter;
 }
 
+h2{
+	margin-top: 50px;
+	font-weight: lighter;
+}
+
 h3 {
 	text-align: center;
 	text-decoration-color: #c897f6;
@@ -71,7 +76,6 @@ select:focus {
 
 table {
 	font-weight: lighter;
-	padding-top: 50px;
 	text-align: left;
 	border-collapse: separate;
 	border-spacing: 5px;
