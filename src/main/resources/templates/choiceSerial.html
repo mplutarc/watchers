@@ -16,14 +16,11 @@
 	<div class="Header-item">
 		<button class="Header-link" aria-label="Films" onclick="document.location='/choiceFilm'">Фильмы</button>
 	</div>
-	<div class="Header-item">
-		<button class="Header-link" aria-label="Random" onclick="document.location='/random'">Рандом</button>
-	</div>
 </header>
 <div class="main">
 	<h3>we are watchers</h3>
 	<form>
-		<select th:name="genres" id="selectGenres" onchange="OnSerialSelectionChange(this)">
+		<select th:name="genres" id="selectGenres" onchange="OnSerialGenreChange(this)">
 			<option>Выбрать жанр</option>
 			<option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>
 		</select>
@@ -52,7 +49,7 @@
 			<td th:text="${serial.studio}"></td>
 			<td th:text="${serial.genres}"></td>
 			<td th:text="${serial.type}"></td>
-			<td th:text="${serial.done}"></td>
+			<td th:text="${serial.done}? 'Да' : 'Нет'"></td>
 		</tr>
 	</table>
 </div>

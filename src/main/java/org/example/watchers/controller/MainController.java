@@ -32,7 +32,9 @@ public class MainController {
     }
 
     @RequestMapping("/choiceFilm")
-    public String getAllFilmGenres(@RequestParam(required = false, defaultValue = "") String genre, Model model) {
+    public String getFilm(Model model,
+                          @RequestParam(value = "genre", required = false, defaultValue = "") String genre)
+    {
         val films = filmsRepository.findAll();
         val genres = films
                 .stream()
@@ -41,6 +43,12 @@ public class MainController {
                 .flatMap(it -> Stream.of(it.split("; ")))
                 .collect(Collectors.toSet());
         model.addAttribute("genres", genres);
+        val years = films
+                .stream()
+                .map(Films::getYear)
+                .filter(Objects::nonNull)
+                .collect(Collectors.toSet());
+        model.addAttribute("years", years);
         model.addAttribute("films", films
                 .stream()
                 .filter(it -> it.getGenres().contains(genre))
@@ -48,7 +56,7 @@ public class MainController {
         return "choiceFilm";
     }
     @RequestMapping("/choiceSerial")
-    public String getAllSerialGenres(@RequestParam(required = false, defaultValue = "") String genre, Model model) {
+    public String getSerial(@RequestParam(required = false, defaultValue = "") String genre, Model model) {
         val serials = serialsRepository.findAll();
         val genres = serials
                 .stream()

@@ -16,20 +16,51 @@
 	<div class="Header-item">
 		<button class="Header-link" aria-label="Serials" onclick="document.location='/choiceSerial'">Сериалы</button>
 	</div>
-	<div class="Header-item">
-		<button class="Header-link" aria-label="Random" onclick="document.location='/random'">Рандом</button>
-	</div>
 </header>
 <div class="main">
 	<h3>we are watchers</h3>
 	<form>
-		<select th:name="genres" id="selectGenres" onchange="OnFilmSelectionChange(this)">
-			<option>Выбрать жанр</option>
-			<option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>
-		</select>
+		<div class="multipleSelection">
+			<div class="selectBox"
+			     onclick="showCheckboxes()">
+				<select>
+					<option>Выбрать жанры</option>
+				</select>
+				<div class="overSelect"></div>
+			</div>
+			<div id="checkBoxes">
+				<label th:each="genre: ${genres}">
+					<input type="checkbox" th:text="${genre}" th:value="${genre}" />
+				</label>
+			</div>
+		</div>
+<!--		<select th:name="genres" onchange="OnFilmGenreChange(this)">-->
+<!--			<option>Выбрать жанр</option>-->
+<!--			<option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>-->
+<!--		</select>-->
+<!--		<select th:name="years" onchange="OnFilmYearChange(this)">-->
+<!--			<option>Выбрать год</option>-->
+<!--			<option th:each="year: ${years}" th:text="${year}" th:value="${year}"></option>-->
+<!--		</select>-->
 		<button th:action="@{/choiceFilm}">Сбросить фильтры</button>
 	</form>
-		<button class="random" onclick="document.location='/randomFilm'">Рандом</button>
+	<form>
+<!--		<div class="multipleSelection">-->
+<!--			<div class="selectBox"-->
+<!--			     onclick="showCheckboxes()">-->
+<!--				<select>-->
+<!--					<option>Выбрать жанры</option>-->
+<!--				</select>-->
+<!--				<div class="overSelect"></div>-->
+<!--			</div>-->
+<!--			<div id="checkBoxes">-->
+<!--				<label th:each="genre: ${genres}">-->
+<!--					<input type="checkbox" th:text="${genre}" th:value="${genre}" />-->
+<!--				</label>-->
+<!--			</div>-->
+<!--		</div>-->
+	</form>
+	<button class="random" onclick="document.location='/randomFilm'">Рандом</button>
 	<h2>Фильмы</h2>
 	<table class="filmsTable">
 		<tr>
@@ -52,5 +83,6 @@
 		</tr>
 	</table>
 </div>
+<footer>сюда заполнить контакты</footer>
 </body>
 </html>
