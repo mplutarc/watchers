@@ -123,3 +123,7 @@ td {
 	background: #f3e6c2;
 	padding: 1px;
 }
+.random{
+	max-width: fit-content;
+	align-self: center;
+}

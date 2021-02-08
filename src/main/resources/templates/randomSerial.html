@@ -2,11 +2,10 @@
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>choice</title>
+	<title>random</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-	      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="/css/styles.css"/>
-	<script src="/js/scripts.js"></script>
+		  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css" />
 </head>
 <body>
 <header>
@@ -14,24 +13,16 @@
 		<button class="Header-link" aria-label="Home" onclick="document.location='/'">На главную</button>
 	</div>
 	<div class="Header-item">
-		<button class="Header-link" aria-label="Films" onclick="document.location='/choiceFilm'">Фильмы</button>
+		<button class="Header-link" aria-label="Serials" onclick="document.location='/choiceSerial'">Сериалы</button>
 	</div>
 	<div class="Header-item">
-		<button class="Header-link" aria-label="Random" onclick="document.location='/random'">Рандом</button>
+		<button class="Header-link" aria-label="Films" onclick="document.location='/choiceFilm'">Фильмы</button>
 	</div>
 </header>
 <div class="main">
 	<h3>we are watchers</h3>
-	<form>
-		<select th:name="genres" id="selectGenres" onchange="OnSerialSelectionChange(this)">
-			<option>Выбрать жанр</option>
-			<option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>
-		</select>
-		<button th:action="@{/choiceSerial}">Сбросить фильтры</button>
-	</form>
-	<button class="random" onclick="document.location='/randomSerial'">Рандом</button>
-	<h2>Фильмы</h2>
-	<table class="filmsTable">
+	<button class="random" onclick="document.location='/randomSerial'">Покрутим ещё</button>
+	<table class="randomTable">
 		<tr>
 			<th>Название</th>
 			<th>Год</th>
@@ -43,7 +34,7 @@
 			<th>Тип</th>
 			<th>Просмотрено</th>
 		</tr>
-		<tr th:each="serial: ${serials}">
+		<tr th:each="serial: ${randSerials}">
 			<td th:text="${serial.name}"></td>
 			<td th:text="${serial.year}"></td>
 			<td th:text="${serial.country}"></td>

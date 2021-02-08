@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Objects;
+import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -63,4 +64,22 @@ public class MainController {
         return "choiceSerial";
     }
 
+    @RequestMapping("/randomFilm")
+    public String randomFilm(Model model){
+        int rand = new Random().nextInt(filmsRepository.findAll().size());
+        val randFilms = filmsRepository.findAll();
+        model.addAttribute("randFilms", randFilms
+                .stream().filter(it -> it.getNumber().equals(rand+1))
+                .collect(Collectors.toList()));
+        return "randomFilm";
+    }
+    @RequestMapping("/randomSerial")
+    public String randomSerial(Model model){
+        int rand = new Random().nextInt(serialsRepository.findAll().size());
+        val randSerials = serialsRepository.findAll();
+        model.addAttribute("randSerials", randSerials
+                .stream().filter(it -> it.getNumber().equals(rand+1))
+                .collect(Collectors.toList()));
+        return "randomSerial";
+    }
 }

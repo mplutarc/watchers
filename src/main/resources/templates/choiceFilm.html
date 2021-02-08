@@ -16,6 +16,9 @@
 	<div class="Header-item">
 		<button class="Header-link" aria-label="Serials" onclick="document.location='/choiceSerial'">Сериалы</button>
 	</div>
+	<div class="Header-item">
+		<button class="Header-link" aria-label="Random" onclick="document.location='/random'">Рандом</button>
+	</div>
 </header>
 <div class="main">
 	<h3>we are watchers</h3>
@@ -26,6 +29,7 @@
 		</select>
 		<button th:action="@{/choiceFilm}">Сбросить фильтры</button>
 	</form>
+		<button class="random" onclick="document.location='/randomFilm'">Рандом</button>
 	<h2>Фильмы</h2>
 	<table class="filmsTable">
 		<tr>
