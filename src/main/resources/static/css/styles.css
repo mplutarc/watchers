@@ -2,6 +2,26 @@ body {
 	background-color: #f3e6c2;
 }
 
+header {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	line-height: 2;
+	padding: 16px;
+	background-color: #faeccf;
+}
+
+.Header-item {
+	margin-right: 16px;
+	align-self: stretch;
+}
+
+.Header-link {
+	color: #c897f6;
+	white-space: nowrap;
+	margin-top: 1px;
+}
+
 .main {
 	display: flex;
 	flex-direction:column;
@@ -82,6 +102,10 @@ table {
 	background: rgba(0,0,0,0);
 }
 th {
+	/*position: fixed;*/
+	position: sticky;
+	top: 0;
+	z-index: 5;
 	font-weight: lighter;
 	background-color: #faeccf;
 	padding: 1px;
