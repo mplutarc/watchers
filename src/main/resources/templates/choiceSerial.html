@@ -20,15 +20,20 @@
 <div class="main">
 	<h3>we are watchers</h3>
 	<form>
-		<select th:name="genres" id="selectGenres" onchange="OnSerialGenreChange(this)">
-			<option>Выбрать жанр</option>
+		<select th:name="genres" id="genreSerialChange">
+			<option value="">Выбрать жанр</option>
 			<option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>
 		</select>
-		<button th:action="@{/choiceSerial}">Сбросить фильтры</button>
+		<select id="yearSerialChange" th:name="years">
+			<option value="">Выбрать год</option>
+			<option th:each="year: ${years}" th:text="${year}" th:value="${year}"></option>
+		</select>
+		<button type="submit" onclick="OnSerialChange()">Искать</button>
 	</form>
+	<button class="clear" onclick="document.location='/choiceSerial'">Сбросить фильтры</button>
 	<button class="random" onclick="document.location='/randomSerial'">Рандом</button>
-	<h2>Фильмы</h2>
-	<table class="filmsTable">
+	<h2>Сериалы и аниме</h2>
+	<table class="serialsTable">
 		<tr>
 			<th>Название</th>
 			<th>Год</th>

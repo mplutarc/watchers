@@ -18,7 +18,7 @@ public class Serials {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer number;
     private String name;
-    private Integer year;
+    private String year;
     private String country;
     private Integer seasons;
     private Integer episodes;

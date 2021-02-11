@@ -20,46 +20,17 @@
 <div class="main">
 	<h3>we are watchers</h3>
 	<form>
-		<div class="multipleSelection">
-			<div class="selectBox"
-			     onclick="showCheckboxes()">
-				<select>
-					<option>Выбрать жанры</option>
-				</select>
-				<div class="overSelect"></div>
-			</div>
-			<div id="checkBoxes">
-				<label th:each="genre: ${genres}">
-					<input type="checkbox" th:text="${genre}" th:value="${genre}" />
-				</label>
-			</div>
-		</div>
-<!--		<select th:name="genres" onchange="OnFilmGenreChange(this)">-->
-<!--			<option>Выбрать жанр</option>-->
-<!--			<option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>-->
-<!--		</select>-->
-<!--		<select th:name="years" onchange="OnFilmYearChange(this)">-->
-<!--			<option>Выбрать год</option>-->
-<!--			<option th:each="year: ${years}" th:text="${year}" th:value="${year}"></option>-->
-<!--		</select>-->
-		<button th:action="@{/choiceFilm}">Сбросить фильтры</button>
+		<select id="genreFilmChange" th:name="genre" >
+			<option value="">Выбрать жанр</option>
+			<option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>
+		</select>
+		<select id="yearFilmChange" th:name="year" >
+			<option value="">Выбрать год</option>
+			<option th:each="year: ${years}" th:text="${year}" th:value="${year}"></option>
+		</select>
+		<button type="submit" onclick="OnFilmChange()">Искать</button>
 	</form>
-	<form>
-<!--		<div class="multipleSelection">-->
-<!--			<div class="selectBox"-->
-<!--			     onclick="showCheckboxes()">-->
-<!--				<select>-->
-<!--					<option>Выбрать жанры</option>-->
-<!--				</select>-->
-<!--				<div class="overSelect"></div>-->
-<!--			</div>-->
-<!--			<div id="checkBoxes">-->
-<!--				<label th:each="genre: ${genres}">-->
-<!--					<input type="checkbox" th:text="${genre}" th:value="${genre}" />-->
-<!--				</label>-->
-<!--			</div>-->
-<!--		</div>-->
-	</form>
+	<button class="clear" onclick="document.location='/choiceFilm'">Сбросить фильтры</button>
 	<button class="random" onclick="document.location='/randomFilm'">Рандом</button>
 	<h2>Фильмы</h2>
 	<table class="filmsTable">

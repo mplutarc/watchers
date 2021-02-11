@@ -18,7 +18,7 @@ public class Films {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer number;
 	private String name;
-	private Integer year;
+	private String year;
 	private String country;
 	private String duration;
 	private String director;

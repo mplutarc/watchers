@@ -33,7 +33,8 @@ public class MainController {
 
     @RequestMapping("/choiceFilm")
     public String getFilm(Model model,
-                          @RequestParam(value = "genre", required = false, defaultValue = "") String genre)
+                          @RequestParam(value = "genre", required = false, defaultValue = "") String genre,
+                          @RequestParam(value = "year", required = false, defaultValue = "") String year)
     {
         val films = filmsRepository.findAll();
         val genres = films
@@ -52,11 +53,14 @@ public class MainController {
         model.addAttribute("films", films
                 .stream()
                 .filter(it -> it.getGenres().contains(genre))
+                .filter(it -> it.getYear().contains(year))
                 .collect(Collectors.toList()));
         return "choiceFilm";
     }
     @RequestMapping("/choiceSerial")
-    public String getSerial(@RequestParam(required = false, defaultValue = "") String genre, Model model) {
+    public String getSerial(@RequestParam(value = "genre", required = false, defaultValue = "") String genre,
+                            @RequestParam(value = "year", required = false, defaultValue = "") String year,
+                            Model model) {
         val serials = serialsRepository.findAll();
         val genres = serials
                 .stream()
@@ -65,9 +69,16 @@ public class MainController {
                 .flatMap(it -> Stream.of(it.split("; ")))
                 .collect(Collectors.toSet());
         model.addAttribute("genres", genres);
+        val years = serials
+                .stream()
+                .map(Serials::getYear)
+                .filter(Objects::nonNull)
+                .collect(Collectors.toSet());
+        model.addAttribute("years", years);
         model.addAttribute("serials", serials
                 .stream()
                 .filter(it -> it.getGenres().contains(genre))
+                .filter(it -> it.getYear().contains(year))
                 .collect(Collectors.toList()));
         return "choiceSerial";
     }

@@ -23,27 +23,41 @@
 	<h3>we are watchers</h3>
 	<button class="random" onclick="document.location='/randomSerial'">Покрутим ещё</button>
 	<table class="randomTable">
-		<tr>
+		<tr  th:each="serial: ${randSerials}">
 			<th>Название</th>
-			<th>Год</th>
-			<th>Страна</th>
-			<th>Сезонов</th>
-			<th>Серий</th>
-			<th>Студия</th>
-			<th>Жанр</th>
-			<th>Тип</th>
-			<th>Просмотрено</th>
+			<td th:text="${serial.name}"></td>
 		</tr>
 		<tr th:each="serial: ${randSerials}">
-			<td th:text="${serial.name}"></td>
+			<th>Год</th>
 			<td th:text="${serial.year}"></td>
+		</tr>
+		<tr th:each="serial: ${randSerials}">
+			<th>Страна</th>
 			<td th:text="${serial.country}"></td>
+		</tr>
+		<tr th:each="serial: ${randSerials}">
+			<th>Сезонов</th>
 			<td th:text="${serial.seasons}"></td>
+		</tr>
+		<tr th:each="serial: ${randSerials}">
+			<th>Серий</th>
 			<td th:text="${serial.episodes}"></td>
+		</tr>
+		<tr th:each="serial: ${randSerials}">
+			<th>Студия</th>
 			<td th:text="${serial.studio}"></td>
+		</tr>
+		<tr th:each="serial: ${randSerials}">
+			<th>Жанры</th>
 			<td th:text="${serial.genres}"></td>
+		</tr>
+		<tr th:each="serial: ${randSerials}">
+			<th>Тип</th>
 			<td th:text="${serial.type}"></td>
-			<td th:text="${serial.done}"></td>
+		</tr>
+		<tr th:each="serial: ${randSerials}">
+			<th>Просмотрено</th>
+			<td th:text="${serial.done}?'да':'нет'"></td>
 		</tr>
 	</table>
 </div>
