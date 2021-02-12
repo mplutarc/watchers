@@ -1,0 +1,86 @@
+body {
+    background-color: #524A40;
+}
+
+header {
+    background-color: #8F806B;
+}
+header:hover{
+    box-shadow: 0 0 20px #8F806B;
+}
+
+.Header-link {
+    color: #DBC49E;
+}
+
+.Header-link:hover{
+    box-shadow: -5px 5px 10px #DBC49E;
+    border-color: #DBC49E;
+    color: #DBC49E;
+}
+
+h2{
+    color: #DBC49E;
+}
+
+h3 {
+    color: #DBC49E;
+    text-decoration-color: #DBC49E;
+}
+
+select {
+    color: #8F806B;
+    background: rgba(0,0,0,0);
+    border-left: solid 2px #615749;
+    border-bottom: solid 2px #615749;
+
+}
+select:hover {
+    box-shadow: -5px 5px 10px #8F806B;
+    border-color: #8F806B;
+    color: #DBC49E;
+}
+button {
+    color: #8F806B;
+    background: rgba(0,0,0,0);
+    border-left: solid 2px #615749;
+    border-bottom: solid 2px #615749;
+}
+button:focus{
+    border-color: #615749;
+}
+
+button:hover {
+    box-shadow: -5px 5px 10px #8F806B;
+    border-color: #8F806B;
+    color: #DBC49E;
+}
+button:active {
+    background: rgba(0,0,0,0);
+}
+
+table {
+    color: #8F806B;
+    background: rgba(0,0,0,0);
+}
+th {
+    background-color: #C2AD8C;
+    border: solid 1px #8F806B;
+    color: #524A40;
+}
+td {
+    border-left: solid 2px #8F806B;
+    border-bottom: solid 2px #8F806B;
+    background: #918571;
+    color: #524A40;
+}
+
+footer{
+    background-color: #8F806B;
+}
+footer:hover{
+    box-shadow: -10px 0 20px #8F806B;
+}
+.footer_img{
+    filter: invert(100) hue-rotate(180deg);
+}

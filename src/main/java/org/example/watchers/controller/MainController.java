@@ -58,8 +58,8 @@ public class MainController {
         return "choiceFilm";
     }
     @RequestMapping("/choiceSerial")
-    public String getSerial(@RequestParam(value = "genre", required = false, defaultValue = "") String genre,
-                            @RequestParam(value = "year", required = false, defaultValue = "") String year,
+    public String getSerial(@RequestParam(value = "genres", required = false, defaultValue = "") String genre,
+                            @RequestParam(value = "years", required = false, defaultValue = "") String year,
                             Model model) {
         val serials = serialsRepository.findAll();
         val genres = serials

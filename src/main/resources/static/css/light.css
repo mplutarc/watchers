@@ -1,0 +1,75 @@
+body {
+	background-color: #C2AD8C;
+}
+
+header {
+	background-color: #8F806B;
+}
+header:hover{
+	box-shadow: 0 0 20px #8F806B;
+}
+
+.Header-link {
+	color: #DBC49E;
+	border-left: solid 2px #DBC49E;
+	border-bottom: solid 2px #DBC49E;
+
+}
+h2{
+	color: #524A40;
+}
+h3 {
+	color: #524A40;
+	text-decoration-color: #8F806B;
+}
+
+select {
+	color: #8F806B;
+	background: rgba(0,0,0,0);
+	border-left: solid 2px #8F806B;
+	border-bottom: solid 2px #8F806B;
+
+}
+select:hover {
+	box-shadow: -5px 5px 10px #8F806B;
+	border-color: #615749;
+	color: #615749;
+}
+
+button {
+	color: #8F806B;
+	background: rgba(0,0,0,0);
+	border-left: solid 2px #8F806B;
+	border-bottom: solid 2px #8F806B;
+}
+button:focus{
+	border-color: #615749;
+}
+button:hover {
+	box-shadow: -5px 5px 10px #8F806B;
+	border-color: #615749;
+	color: #615749;
+}
+button:active {
+	background: rgba(0,0,0,0);
+}
+
+table {
+	background: rgba(0,0,0,0);
+}
+th {
+	background: #DFCCAF;
+	border: solid 1px #8F806B;
+}
+td {
+	border-left: solid 2px #8F806B;
+	border-bottom: solid 2px #8F806B;
+	background-color: #DBC49E;
+}
+
+footer{
+	background-color: #8F806B;
+}
+footer:hover{
+	box-shadow: -10px 0 20px #615749;
+}

@@ -1,0 +1,136 @@
+body {
+    display: flex;
+    flex-direction:column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    line-height: 2;
+    padding: 16px;
+}
+.Header-item {
+    margin-right: 16px;
+    align-self: stretch;
+    border-radius:4px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+}
+
+.Header-link {
+    white-space: nowrap;
+    margin-top: 1px;
+}
+
+.theme-button{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    display: inline-block;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+.theme_img{
+
+}
+
+.main {
+    flex-grow: 1;
+    padding: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-weight: lighter;
+    max-width: fit-content;
+}
+
+h2{
+    margin-top: 50px;
+    font-weight: lighter;
+}
+
+h3 {
+    text-align: center;
+    text-decoration-line: overline;
+}
+
+select {
+    margin-top: 50px;
+    font-size: medium;
+    font-weight: lighter;
+    text-align: center;
+    border-radius:4px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+
+}
+select:active {
+    transform: translateY(5px);
+}
+
+select:focus {
+    outline: none;
+}
+
+button {
+    margin-top: 20px;
+    font-size: medium;
+    font-weight: lighter;
+    text-align: center;
+    border-radius: 5px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+}
+button:focus{
+    outline: none;
+}
+
+button:active {
+    transform: translateY(5px);
+}
+
+table {
+    font-weight: lighter;
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 5px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    font-weight: lighter;
+    padding: 1px;
+    border-radius:4px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+}
+td {
+    border-radius:4px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    padding: 1px;
+}
+
+.random, .clear{
+    max-width: fit-content;
+    align-self: center;
+}
+
+.random{
+    margin-bottom: 30px;
+}
+
+footer{
+    flex-shrink: 0;
+    text-align: center;
+}
+.footer_img{
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
