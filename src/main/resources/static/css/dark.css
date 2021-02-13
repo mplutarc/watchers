@@ -19,6 +19,9 @@ header:hover{
     color: #DBC49E;
 }
 
+img{
+    filter: invert(100) hue-rotate(180deg);
+}
 h2{
     color: #DBC49E;
 }
@@ -26,6 +29,10 @@ h2{
 h3 {
     color: #DBC49E;
     text-decoration-color: #DBC49E;
+}
+
+p{
+    color: #DBC49E;
 }
 
 select {
@@ -80,7 +87,4 @@ footer{
 }
 footer:hover{
     box-shadow: -10px 0 20px #8F806B;
-}
-.footer_img{
-    filter: invert(100) hue-rotate(180deg);
 }

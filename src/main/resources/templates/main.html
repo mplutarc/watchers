@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/main.css"/>
 	<link rel="stylesheet" type="text/css" id="theme-link" href="/css/light.css"/>
 </head>
-<body>
+<body  onload="setTheme()">
 	<header>
 		<div class="Header-item">
 			<button class="Header-link" aria-label="Film" onclick="document.location='/choiceFilm'">Фильмы</button>
@@ -22,13 +22,10 @@
 		<div class="Header-item">
 			<button class="Header-link" aria-label="RandSerial" onclick="document.location='/randomSerial'">Сериал дня</button>
 		</div>
-		<label class="switch">
-			<div class="theme-button" id="theme-button">
-				<img src="https://www.flaticon.com/svg/vstatic/svg/3026/3026415.svg?token=exp=1613157927~hmac=7029c494c8ddb32c318932f072d0e7b6"
-				     alt="light"
-				     class="theme-img">
-			</div>
-		</label>
+		<div class="theme-button" id="theme-button">
+			<img src="https://img.icons8.com/pastel-glyph/2x/torch.png"
+			     alt="light">
+		</div>
 	</header>
 	<div class="main">
 		<h3>we are watchers</h3>
@@ -40,23 +37,23 @@
 	</div>
 	<footer>
 		<a href="https://github.com/mplutarc">
-			<img class="footer_img" src="https://image.flaticon.com/icons/png/512/25/25231.png"
+			<img src="https://image.flaticon.com/icons/png/512/25/25231.png"
 			     alt="github">
 		</a>
 		<a href="https://twitter.com/andaerere">
-			<img class="footer_img" src="https://image.flaticon.com/icons/png/512/36/36833.png"
+			<img src="https://image.flaticon.com/icons/png/512/36/36833.png"
 			     alt="twitter">
 		</a>
 		<a href="https://www.pinterest.ru/andaerez">
-			<img class="footer_img" src="https://image.flaticon.com/icons/png/512/25/25698.png"
+			<img src="https://image.flaticon.com/icons/png/512/25/25698.png"
 			     alt="pinterest">
 		</a>
 		<a href="https://t.me/andarer">
-			<img class="footer_img" src="https://pics.freeicons.io/uploads/icons/png/1766858341556105723-512.png"
+			<img src="https://pics.freeicons.io/uploads/icons/png/1766858341556105723-512.png"
 			     alt="telegram">
 		</a>
 		<a href="https://vk.com/andarer">
-			<img class="footer_img" src="https://image.flaticon.com/icons/png/512/49/49444.png"
+			<img src="https://image.flaticon.com/icons/png/512/49/49444.png"
 			     alt="vk">
 		</a>
 	</footer>

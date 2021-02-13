@@ -26,14 +26,15 @@ header {
 
 .theme-button{
     position: absolute;
-    right: 5px;
-    top: 5px;
+    right: 1px;
+    top: 1px;
     display: inline-block;
-    padding: 10px 25px;
     cursor: pointer;
 }
-.theme_img{
-
+img{
+    width: 40px;
+    height: 40px;
+    margin: 10px;
 }
 
 .main {
@@ -99,6 +100,10 @@ table {
     padding-left: 15%;
     padding-right: 15%;
 }
+.randomTable{
+    padding-left: 0;
+    padding-right: 0;
+}
 th {
     position: sticky;
     top: 0;
@@ -128,9 +133,4 @@ td {
 footer{
     flex-shrink: 0;
     text-align: center;
-}
-.footer_img{
-    width: 40px;
-    height: 40px;
-    margin: 10px;
 }
