@@ -19,6 +19,9 @@
 	<div class="Header-item">
 		<button class="Header-link" aria-label="Films" onclick="document.location='/choiceFilm'">Фильмы</button>
 	</div>
+	<div class="Header-item">
+		<button class="Header-link" aria-label="RandFilm" onclick="document.location='/randomFilm'">Фильм дня</button>
+	</div>
 	<div class="theme-button" id="theme-button">
 		<img src="https://img.icons8.com/pastel-glyph/2x/torch.png"
 		     alt="light">
@@ -59,10 +62,6 @@
 		<tr th:each="serial: ${randSerials}">
 			<th>Тип</th>
 			<td th:text="${serial.type}"></td>
-		</tr>
-		<tr th:each="serial: ${randSerials}">
-			<th>Просмотрено</th>
-			<td th:text="${serial.done}?'да':'нет'"></td>
 		</tr>
 	</table>
 </div>

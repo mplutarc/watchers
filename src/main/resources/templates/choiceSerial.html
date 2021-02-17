@@ -16,6 +16,12 @@
 	<div class="Header-item">
 		<button class="Header-link" aria-label="Films" onclick="document.location='/choiceFilm'">Фильмы</button>
 	</div>
+	<div class="Header-item">
+		<button class="Header-link" aria-label="RandFilm" onclick="document.location='/randomFilm'">Фильм дня</button>
+	</div>
+	<div class="Header-item">
+		<button class="Header-link" aria-label="RandSerial" onclick="document.location='/randomSerial'">Сериал дня</button>
+	</div>
 	<div class="theme-button" id="theme-button">
 		<img src="https://img.icons8.com/pastel-glyph/2x/torch.png"
 		     alt="light">
@@ -24,30 +30,33 @@
 <div class="main">
 	<h3>we are watchers</h3>
 	<form>
-		<select th:name="genres" id="genreSerialChange">
+		<select id="genreSerialChange" th:name="genres" >
 			<option value="">Выбрать жанр</option>
-			<option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>
+			<option th:each="genre: ${genres}"
+			        th:text="${genre}"
+			        th:value="${genre}"></option>
 		</select>
 		<select id="yearSerialChange" th:name="years">
 			<option value="">Выбрать год</option>
-			<option th:each="year: ${years}" th:text="${year}" th:value="${year}"></option>
+			<option th:each="year: ${years}"
+			        th:text="${year}"
+			        th:value="${year}"></option>
 		</select>
 		<button type="submit" onclick="OnSerialChange()">Искать</button>
 	</form>
-	<button class="clear" onclick="document.location='/choiceSerial'">Сбросить фильтры</button>
+	<button class="clear" onclick="clearSerial()">Сбросить фильтры</button>
 	<button class="random" onclick="document.location='/randomSerial'">Рандом</button>
 	<h2>Сериалы и аниме</h2>
-	<table class="serialsTable">
+	<table class="serialsTable" id="sortTable">
 		<tr>
-			<th>Название</th>
-			<th>Год</th>
-			<th>Страна</th>
-			<th>Сезонов</th>
-			<th>Серий</th>
-			<th>Студия</th>
-			<th>Жанр</th>
-			<th>Тип</th>
-			<th>Просмотрено</th>
+			<th onclick="sortTable(0)">Название</th>
+			<th onclick="sortTable(1)">Год</th>
+			<th onclick="sortTable(2)">Страна</th>
+			<th onclick="sortTable(3)">Сезонов</th>
+			<th onclick="sortTable(4)">Серий</th>
+			<th onclick="sortTable(5)">Студия</th>
+			<th onclick="sortTable(6)">Жанр</th>
+			<th onclick="sortTable(7)">Тип</th>
 		</tr>
 		<tr th:each="serial: ${serials}">
 			<td th:text="${serial.name}"></td>
@@ -58,7 +67,6 @@
 			<td th:text="${serial.studio}"></td>
 			<td th:text="${serial.genres}"></td>
 			<td th:text="${serial.type}"></td>
-			<td th:text="${serial.done}? 'Да' : 'Нет'"></td>
 		</tr>
 	</table>
 </div>
@@ -83,11 +91,6 @@
 		<img class="footer_img" src="https://image.flaticon.com/icons/png/512/49/49444.png"
 		     alt="vk">
 	</a>
-	<div>Icons made by
-		<a href="https://www.freepik.com" title="Freepik">Freepik</a>
-		from
-		<a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-	</div>
 </footer>
 <script src="/js/scripts.js"></script>
 </body>

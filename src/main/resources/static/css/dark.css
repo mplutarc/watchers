@@ -47,6 +47,9 @@ select:hover {
     border-color: #8F806B;
     color: #DBC49E;
 }
+option{
+    color: #8F806B;
+}
 button {
     color: #8F806B;
     background: rgba(0,0,0,0);
@@ -74,6 +77,16 @@ th {
     background-color: #C2AD8C;
     border: solid 1px #8F806B;
     color: #524A40;
+}
+.filmsTable th:hover {
+    box-shadow: -2px 2px 5px #8F806B;
+    border-color: #8F806B;
+    color: #615749;
+}
+.serialsTable th:hover{
+    box-shadow: -2px 2px 5px #8F806B;
+    border-color: #8F806B;
+    color: #615749;
 }
 td {
     border-left: solid 2px #8F806B;

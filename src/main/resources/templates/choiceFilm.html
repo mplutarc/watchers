@@ -16,6 +16,12 @@
 	<div class="Header-item">
 		<button class="Header-link" aria-label="Serials" onclick="document.location='/choiceSerial'">Сериалы</button>
 	</div>
+	<div class="Header-item">
+		<button class="Header-link" aria-label="RandFilm" onclick="document.location='/randomFilm'">Фильм дня</button>
+	</div>
+	<div class="Header-item">
+		<button class="Header-link" aria-label="RandSerial" onclick="document.location='/randomSerial'">Сериал дня</button>
+	</div>
 	<div class="theme-button" id="theme-button">
 		<img src="https://img.icons8.com/pastel-glyph/2x/torch.png"
 		     alt="light">
@@ -26,26 +32,30 @@
 	<form>
 		<select id="genreFilmChange" th:name="genre" >
 			<option value="">Выбрать жанр</option>
-			<option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>
+			<option th:each="genre: ${genres}"
+			        th:text="${genre}"
+			        th:value="${genre}"></option>
 		</select>
-		<select id="yearFilmChange" th:name="year" >
+		<select id="yearFilmChange" th:name="year">
 			<option value="">Выбрать год</option>
-			<option th:each="year: ${years}" th:text="${year}" th:value="${year}"></option>
+			<option th:each="year: ${years}"
+			        th:text="${year}"
+			        th:value="${year}"></option>
 		</select>
 		<button type="submit" onclick="OnFilmChange()">Искать</button>
 	</form>
-	<button class="clear" onclick="document.location='/choiceFilm'">Сбросить фильтры</button>
+	<button class="clear" onclick="clearFilm()">Сбросить фильтры</button>
 	<button class="random" onclick="document.location='/randomFilm'">Рандом</button>
 	<h2>Фильмы</h2>
-	<table class="filmsTable">
+	<table class="filmsTable" id="sortTable">
 		<tr>
-			<th>Название</th>
-			<th>Год</th>
-			<th>Страна</th>
-			<th>Длительность</th>
-			<th>Режиссёр</th>
-			<th>Жанр</th>
-			<th>Тип</th>
+			<th onclick="sortTable(0)">Название</th>
+			<th onclick="sortTable(1)">Год</th>
+			<th onclick="sortTable(2)">Страна</th>
+			<th onclick="sortTable(3)">Длительность</th>
+			<th onclick="sortTable(4)">Режиссёр</th>
+			<th onclick="sortTable(5)">Жанр</th>
+			<th onclick="sortTable(6)">Тип</th>
 		</tr>
 		<tr th:each="film: ${films}">
 			<td th:text="${film.name}"></td>
@@ -79,11 +89,6 @@
 		<img class="footer_img" src="https://image.flaticon.com/icons/png/512/49/49444.png"
 		     alt="vk">
 	</a>
-	<div>Icons made by
-		<a href="https://www.freepik.com" title="Freepik">Freepik</a>
-		from
-		<a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-	</div>
 </footer>
 <script src="/js/scripts.js"></script>
 </body>
