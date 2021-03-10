@@ -78,7 +78,7 @@ function OnSerialChange() {
 function clearFilm(){
 	localStorage.removeItem('filmGenre');
 	localStorage.removeItem('filmYear');
-	document.location = '/huiFilm';
+	document.location = '/choiceFilm';
 }
 function clearSerial(){
 	localStorage.removeItem('serialGenre');
