@@ -78,12 +78,12 @@ function OnSerialChange() {
 function clearFilm(){
 	localStorage.removeItem('filmGenre');
 	localStorage.removeItem('filmYear');
-	window.location.href = 'http://localhost:8080/choiceFilm';
+	document.location = '/choiceFilm';
 }
 function clearSerial(){
 	localStorage.removeItem('serialGenre');
 	localStorage.removeItem('serialYear');
-	window.location.href = 'http://localhost:8080/choiceSerial';
+	document.location = '/choiceSerial';
 }
 
 function sortTable(n) {
