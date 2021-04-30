@@ -24,7 +24,7 @@ h3 {
 }
 
 select {
-	color: #8F806B;
+	color: #212529;
 	background: rgba(0,0,0,0);
 	border-left: solid 2px #8F806B;
 	border-bottom: solid 2px #8F806B;
@@ -36,11 +36,11 @@ select:hover {
 	color: #615749;
 }
 option{
-	color: #8F806B;
+	color: #212529;
 }
 
 button {
-	color: #8F806B;
+	color: #212529;
 	background: rgba(0,0,0,0);
 	border-left: solid 2px #8F806B;
 	border-bottom: solid 2px #8F806B;
