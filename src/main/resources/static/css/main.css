@@ -227,6 +227,7 @@ footer{
 		height: 30px;
 	}
 }
+
 @media (max-width: 300px) {
 	.Header-item{
 		margin-right: 5px;
