@@ -95,19 +95,28 @@ button:active {
 	transform: translateY(5px);
 }
 
+.tables, .randomTables{
+	overflow: scroll;
+	position: relative;
+	margin: auto;
+}
+.tables {
+	max-width: min-content;
+}
+.randomTables{
+	max-width: fit-content;
+}
 table {
-	max-width: 50%;
-	margin-left: auto;
-	margin-right: auto;
+	display: inline-block;
 	font-weight: lighter;
 	text-align: left;
 	border-collapse: separate;
 	border-spacing: 5px;
+	-webkit-overflow-scrolling: touch;
 }
 .randomTable{
-	width: 300px;
-	padding-left: 0;
-	padding-right: 0;
+	width: fit-content;
+	white-space: nowrap;
 }
 th {
 	position: sticky;
@@ -146,6 +155,13 @@ footer{
 	flex-shrink: 0;
 	text-align: center;
 }
+@media (max-width: 800px){
+	.tables{
+		overflow-x: auto;
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
 
 @media (max-width: 768px){
 	.Header-link, form select, form button, .main button{
@@ -162,33 +178,15 @@ footer{
 	table{
 		max-width: 100%;
 	}
-	.filmsTable tr > *:nth-child(5) {
-		display: none;
-	}
-	.serialsTable tr > *:nth-child(3) {
-		display: none;
-	}
 }
 @media (max-width: 640px) {
-	.filmsTable tr > *:nth-child(4) {
-		display: none;
-	}
-	.serialsTable tr > *:nth-child(6) {
-		display: none;
-	}
 	.Header-link, form select, form button, .main button, table{
 		font-size: 16px;
 	}
 }
 @media (max-width: 580px) {
-	.serialsTable tr > *:nth-child(4), .serialsTable tr > *:nth-child(5) {
-		display: none;
-	}
 }
 @media (max-width: 520px) {
-	.filmsTable tr > *:nth-child(3) {
-		display: none;
-	}
 	.Header-link, form select, form button, .main button, table{
 		font-size: 14px;
 	}
@@ -231,8 +229,5 @@ footer{
 @media (max-width: 300px) {
 	.Header-item{
 		margin-right: 5px;
-	}
-	.serialsTable tr > *:nth-child(2) {
-		display: none;
 	}
 }

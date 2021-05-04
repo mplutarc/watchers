@@ -21,7 +21,8 @@
 		<button class="Header-link" aria-label="RandFilm" onclick="document.location='/randomFilm'">Фильм дня</button>
 	</div>
 	<div class="Header-item">
-		<button class="Header-link" aria-label="RandSerial" onclick="document.location='/randomSerial'">Сериал дня</button>
+		<button class="Header-link" aria-label="RandSerial" onclick="document.location='/randomSerial'">Сериал дня
+		</button>
 	</div>
 	<div class="theme-button" id="theme-button">
 		<img src="https://img.icons8.com/pastel-glyph/2x/torch.png"
@@ -31,7 +32,7 @@
 <div class="main">
 	<h3>we are watchers</h3>
 	<form>
-		<select id="genreFilmChange" th:name="genre" >
+		<select id="genreFilmChange" th:name="genre">
 			<option value="">Выбрать жанр</option>
 			<option th:each="genre: ${genres}"
 			        th:text="${genre}"
@@ -48,26 +49,28 @@
 	<button class="clear" onclick="clearFilm()">Сбросить фильтры</button>
 	<button class="random" onclick="document.location='/randomFilm'">Рандом</button>
 	<h2>Фильмы</h2>
-	<table class="filmsTable" id="sortTable">
-		<tr>
-			<th onclick="sortTable(0)">Название</th>
-			<th onclick="sortTable(1)">Год</th>
-			<th onclick="sortTable(2)">Страна</th>
-			<th onclick="sortTable(3)">Длительность</th>
-			<th onclick="sortTable(4)">Режиссёр</th>
-			<th onclick="sortTable(5)">Жанр</th>
-			<th onclick="sortTable(6)">Тип</th>
-		</tr>
-		<tr th:each="film: ${films}">
-			<td th:text="${film.name}"></td>
-			<td th:text="${film.year}"></td>
-			<td th:text="${film.country}"></td>
-			<td th:text="${film.duration}"></td>
-			<td th:text="${film.director}"></td>
-			<td th:text="${film.genres}"></td>
-			<td th:text="${film.type}"></td>
-		</tr>
-	</table>
+	<div class="tables">
+		<table class="filmsTable" id="sortTable">
+			<tr>
+				<th onclick="sortTable(0)">Название</th>
+				<th onclick="sortTable(1)">Год</th>
+				<th onclick="sortTable(2)">Страна</th>
+				<th onclick="sortTable(3)">Длительность</th>
+				<th onclick="sortTable(4)">Режиссёр</th>
+				<th onclick="sortTable(5)">Жанр</th>
+				<th onclick="sortTable(6)">Тип</th>
+			</tr>
+			<tr th:each="film: ${films}">
+				<td th:text="${film.name}"></td>
+				<td th:text="${film.year}"></td>
+				<td th:text="${film.country}"></td>
+				<td th:text="${film.duration}"></td>
+				<td th:text="${film.director}"></td>
+				<td th:text="${film.genres}"></td>
+				<td th:text="${film.type}"></td>
+			</tr>
+		</table>
+	</div>
 </div>
 <footer>
 	<a href="https://github.com/mplutarc">

@@ -21,7 +21,8 @@
 		<button class="Header-link" aria-label="RandFilm" onclick="document.location='/randomFilm'">Фильм дня</button>
 	</div>
 	<div class="Header-item">
-		<button class="Header-link" aria-label="RandSerial" onclick="document.location='/randomSerial'">Сериал дня</button>
+		<button class="Header-link" aria-label="RandSerial" onclick="document.location='/randomSerial'">Сериал дня
+		</button>
 	</div>
 	<div class="theme-button" id="theme-button">
 		<img src="https://img.icons8.com/pastel-glyph/2x/torch.png"
@@ -31,7 +32,7 @@
 <div class="main">
 	<h3>we are watchers</h3>
 	<form>
-		<select id="genreSerialChange" th:name="genres" >
+		<select id="genreSerialChange" th:name="genres">
 			<option value="">Выбрать жанр</option>
 			<option th:each="genre: ${genres}"
 			        th:text="${genre}"
@@ -48,28 +49,30 @@
 	<button class="clear" onclick="clearSerial()">Сбросить фильтры</button>
 	<button class="random" onclick="document.location='/randomSerial'">Рандом</button>
 	<h2>Сериалы и аниме</h2>
-	<table class="serialsTable" id="sortTable">
-		<tr>
-			<th onclick="sortTable(0)">Название</th>
-			<th onclick="sortTable(1)">Год</th>
-			<th onclick="sortTable(2)">Страна</th>
-			<th onclick="sortTable(3)">Сезонов</th>
-			<th onclick="sortTable(4)">Серий</th>
-			<th onclick="sortTable(5)">Студия</th>
-			<th onclick="sortTable(6)">Жанр</th>
-			<th onclick="sortTable(7)">Тип</th>
-		</tr>
-		<tr th:each="serial: ${serials}">
-			<td th:text="${serial.name}"></td>
-			<td th:text="${serial.year}"></td>
-			<td th:text="${serial.country}"></td>
-			<td th:text="${serial.seasons}"></td>
-			<td th:text="${serial.episodes}"></td>
-			<td th:text="${serial.studio}"></td>
-			<td th:text="${serial.genres}"></td>
-			<td th:text="${serial.type}"></td>
-		</tr>
-	</table>
+	<div class="tables">
+		<table class="serialsTable" id="sortTable">
+			<tr>
+				<th onclick="sortTable(0)">Название</th>
+				<th onclick="sortTable(1)">Год</th>
+				<th onclick="sortTable(2)">Страна</th>
+				<th onclick="sortTable(3)">Сезонов</th>
+				<th onclick="sortTable(4)">Серий</th>
+				<th onclick="sortTable(5)">Студия</th>
+				<th onclick="sortTable(6)">Жанр</th>
+				<th onclick="sortTable(7)">Тип</th>
+			</tr>
+			<tr th:each="serial: ${serials}">
+				<td th:text="${serial.name}"></td>
+				<td th:text="${serial.year}"></td>
+				<td th:text="${serial.country}"></td>
+				<td th:text="${serial.seasons}"></td>
+				<td th:text="${serial.episodes}"></td>
+				<td th:text="${serial.studio}"></td>
+				<td th:text="${serial.genres}"></td>
+				<td th:text="${serial.type}"></td>
+			</tr>
+		</table>
+	</div>
 </div>
 <footer>
 	<a href="https://github.com/mplutarc">
