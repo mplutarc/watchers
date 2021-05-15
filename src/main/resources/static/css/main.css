@@ -29,7 +29,7 @@ header {
 .theme-button{
 	position: absolute;
 	right: 1px;
-	top: 1px;
+	top: 70px;
 	display: inline-block;
 	cursor: pointer;
 }
@@ -209,11 +209,6 @@ footer{
 	.theme-button img{
 		width: 35px;
 		height: 35px;
-	}
-}
-@media (max-width: 390px) {
-	.theme-button{
-		top: 70px;
 	}
 }
 @media (max-width: 320px) {
